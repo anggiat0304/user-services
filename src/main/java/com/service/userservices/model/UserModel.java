@@ -7,7 +7,7 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "user")
+@Table(name = "user_tbl")
 @Getter
 @Setter
 @Data
@@ -16,6 +16,8 @@ public class UserModel {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private  long id;
     private String name;
+    private String username;
+    private String password;
     private String noTelp;
     private String email;
 

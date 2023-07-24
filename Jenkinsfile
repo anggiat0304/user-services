@@ -1,16 +1,19 @@
 pipeline{
     agent any
     stages{
-         stage('Build') {
+        stage('Checkout') {
                     steps {
-
+                        git 'https://github.com/anggiat0304/user-services.git'
+                    }
+                }
+         stage('Build') {
+                   steps {
                         sh 'mvn clean install'
                     }
                 }
 
-                stage('Test') {
+         stage('Test') {
                     steps {
-                        // Menjalankan unit tests
                         sh 'mvn test'
                     }
                 }
